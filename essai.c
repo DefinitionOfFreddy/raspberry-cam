@@ -1,0 +1,7 @@
+#include
+
+printf
+
+scanf
+
+fscanf
