@@ -4,6 +4,6 @@
 #include <stdlib.h>
 #include "type.h"
 
-int coord_centre(img I, pixel* p, uint8 c)
+int coord_centre(img I, pixel* p, uint8 c);
 
 #endif
