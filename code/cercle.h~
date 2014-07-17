@@ -4,6 +4,11 @@
 #include <stdlib.h>
 #include "type.h"
 
-int coord_centre(img I, pixel* p, uint8 c)
+int coord_centre(img I, pixel* p, uint8 c);
+<<<<<<< HEAD
+=======
+
+int compar_cercle(img I, img J, uint8 c);
+>>>>>>> 2145b2afa4b2d32e8195100809fe69b033f3fcf8
 
 #endif
