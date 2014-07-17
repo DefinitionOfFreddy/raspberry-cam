@@ -1,7 +1,5 @@
 #include <cercle.h>
 
-
-
-void coord_centre(img I, pixel* p, uint8 c)
+int coord_centre(img I, pixel* p, uint8 c)
 {
 }
