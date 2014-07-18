@@ -8,6 +8,7 @@ void import_bin(img* I,char* f)
   FILE* fichier = fopen(f,"r");
   
   
+  
 }
 
 void import_nb(img* I,char* f)
