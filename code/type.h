@@ -1,21 +1,25 @@
-#ifndef TYPE
-#define TYPE
+#ifndef TYPE_
+#define TYPE_
 
-#include <stdint.h>
 #include <stdio.h>
 
 
 
-typedef pixel {uint8 couleur; uint8 statut};
+typedef struct {int couleur; int etat;} pixel;
 
 
-typedef img pixel**;
+typedef pixel** img;
 
-typedef imgRGB {
-  pixel*** R;
-  pixel*** G;
-  pixel*** B;
-};
+typedef struct {
+  int R;
+  int G;
+  int B;
+  int etat;
+}** imgRGB;
+
+void affiche_img(img I, int lig, int col);
+
+
 
 #endif
 
