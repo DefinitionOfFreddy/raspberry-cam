@@ -23,7 +23,7 @@ img import_1(char* f, int* plig, int* pcol)
 		if (lecture != 2 ) return NULL;
 		//Allocation mémoire
 		I = calloc(*plig,sizeof(*I));
-		if (I==NULL) printf("Erreur allocation\n");
+		if (I==NULL) printf("/!\ Erreur allocation\n");
 		else
 		{
 			for(i=0;i<*plig;i++)
@@ -80,7 +80,7 @@ int export_1(img I, char* f, int ext, int lig , int col)
 		{
 			fprintf(fichier,"%d ",I[i][j].couleur);
 		}
-		printf("\n");
+		fprintf(fichier,"\n");
 	}
 	}
 	fclose(fichier);

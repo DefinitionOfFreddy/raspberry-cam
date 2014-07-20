@@ -17,7 +17,7 @@ typedef struct {
   int etat;
 }** imgRGB;
 
-void affiche_img(img I, int lig, int col);
+void afficheimg_1(img I, int lig, int col);
 
 
 

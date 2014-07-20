@@ -1,6 +1,6 @@
 #include "type.h"
 
-void affiche_img1(img I, int lig, int col)
+void afficheimg_1(img I, int lig, int col)
 { int i,j;
 	for(i=0;i<lig;i++)
 	{
