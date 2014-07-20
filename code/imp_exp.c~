@@ -17,11 +17,9 @@ img import_1(char* f, int* plig, int* pcol)
 		int color;
 		char stri[3];
 
-		fgets(stri,3,fichier); //lire la première ligne
-		
+		fgets(stri,3,fichier);
 		lecture = fscanf(fichier,"%d %d",plig,pcol);
-		if (lecture != 2 ) return NULL;
-		//Allocation mémoire
+
 		I = calloc(*plig,sizeof(*I));
 		if (I==NULL) printf("Erreur allocation\n");
 		else
@@ -30,7 +28,7 @@ img import_1(char* f, int* plig, int* pcol)
 			{
 				I[i] = calloc(*pcol,sizeof(**I));
 			}
-			//Lecture des pixels du fichier
+
 			for(i=0;i<*plig;i++)
 			{
 				for(j=0;j<*pcol;j++)
@@ -48,17 +46,6 @@ img import_1(char* f, int* plig, int* pcol)
 	}
 	return I;
 }
-
-void desallocation_1(img I, int lig)
-{
-	int i;
-	for(i=0;i<lig;i++)
-	{
-		free(I[i]);
-	}
-	free(I);
-}
-
 
 int export_1(img I, char* f, int ext, int lig , int col)
 {
@@ -83,7 +70,6 @@ int export_1(img I, char* f, int ext, int lig , int col)
 		printf("\n");
 	}
 	}
-	fclose(fichier);
 	return 1;
 }
 
