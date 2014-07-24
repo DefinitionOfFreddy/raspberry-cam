@@ -24,13 +24,7 @@ int main (int argc, char* argv[])
     J = import_1(f, &nlig2, &ncol2); //Allocation de I et lecture du fichier nommé f
     printf("IMAGE 2 \n");
     afficheimg_1(J,nlig2,ncol2);
-    coordone point, point2;
-    point = coord_centre(I, nlig, ncol, NULL, 1);
-    point2 = coord_centre(J, nlig2, ncol2, NULL, 1);
-    printf ("point : %d \n", point.ligne);
-    printf ("point2 : %d \n", point2.ligne);
-    printf ("%d vers le bas \n", -(point.ligne - point2.ligne));
-    printf ("%d vers la droite \n", -(point.colonne - point2.colonne));
+    compar_cercle(I,J,nlig, ncol, nlig2, ncol2, 1);
     export = export_1(I,"essai.pbm",0,nlig,ncol);
     if (!export) return 0;
 

@@ -6,7 +6,7 @@
 
 typedef struct {int couleur; int etat;} pixel;
 
-typedef struct {int ligne; int colonne;} coordone;
+typedef struct {int x; int y;} coordonne;
 
 typedef pixel** img;
 

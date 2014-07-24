@@ -1,9 +1,9 @@
 #include "cercle.h"
 
-coordone coord_centre(img I, int nb_ligne, int nb_colone, pixel* p, int c)
+coordonne coord_centre(img I, int nb_ligne, int nb_colone, pixel* p, int c)
 {
     //trouver le plus gros segment noir, prendre le  milieu
-    coordone point;
+    coordonne point;
     int ligne_seg = 0;
     int deb_seg = -1;
     int fin_seg = 0;
@@ -27,16 +27,18 @@ coordone coord_centre(img I, int nb_ligne, int nb_colone, pixel* p, int c)
             ligne_seg = i;
         }
     }
-    point.ligne = ligne_seg;
-    point.colonne = (fin_seg - deb_seg)/2 +1 ;
+    point.y = ligne_seg;
+    point.x = (fin_seg - deb_seg)/2 +1 ;
     return point;
 }
 
 void compar_cercle(img I, img J, int nlig, int ncol, int nlig2, int ncol2, int c)
-{
-    coordone point1, point2;
-    point1 = coord_centre(I, nlig, ncol, NULL, c);
-    point2 = coord_centre(J, nlig2, ncol2, NULL, c);
- //   printf ("%d vers le haut \n", (nlig-nlig2));
-   // printf ("%d vers la droite \n", (ncol-ncol2));
+{   coordonne point, point2;
+    point = coord_centre(I, nlig, ncol, NULL, 1);
+    point2 = coord_centre(J, nlig2, ncol2, NULL, 1);
+    printf ("point : %d \n", point.y);
+    printf ("point2 : %d \n", point2.y);
+    printf ("%d vers le bas \n", -(point.y - point2.y));
+    printf ("%d vers la droite \n", -(point.x - point2.x));
+
 }
