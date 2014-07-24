@@ -30,5 +30,6 @@ int main (int argc, char* argv[])
 
     printf("Exportation ok\n");
     desallocation_1(I,nlig);
+    desallocation_1(J,nlig2);
     return 0;
 }
