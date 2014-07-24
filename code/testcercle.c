@@ -4,7 +4,7 @@
 #include "type.h"
 #include "imp_exp.h"
 
-int main (int argc, char* argv[])
+void main (int argc, char* argv[])
 {
 	int export,nlig,ncol;
 	img I=NULL;

@@ -6,10 +6,9 @@
 #include <stdlib.h>
 #include "type.h"
 
-int coord_centre(img I, pixel* p, int c);
 
-
-int compar_cercle(img I, img J, int c);
-
-
+coordone coord_centre(img I, int nb_ligne, int nb_colone, pixel* p, int c);
+/*
+void compar_cercle(img I, img J, int nlig, int ncol, int nlig2, int ncol2, int c)
+*/
 #endif
