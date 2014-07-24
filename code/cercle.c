@@ -32,13 +32,11 @@ coordonne coord_centre(img I, int nb_ligne, int nb_colone, pixel* p, int c)
     return point;
 }
 
-void compar_cercle(img I, img J, int nlig, int ncol, int nlig2, int ncol2, int c)
-{   coordonne point, point2;
+coordonne compar_cercle(img I, img J, int nlig, int ncol, int nlig2, int ncol2, int c)
+{   coordonne point, point2, vecteur;
     point = coord_centre(I, nlig, ncol, NULL, 1);
     point2 = coord_centre(J, nlig2, ncol2, NULL, 1);
-    printf ("point : %d \n", point.y);
-    printf ("point2 : %d \n", point2.y);
-    printf ("%d vers le bas \n", -(point.y - point2.y));
-    printf ("%d vers la droite \n", -(point.x - point2.x));
-
+    vecteur.y = point2.y - point.y;
+    vecteur.x = point2.x - point.x;
+    return vecteur;
 }
