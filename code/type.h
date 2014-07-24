@@ -4,7 +4,6 @@
 #include <stdio.h>
 
 
-
 typedef struct {int couleur; int etat;} pixel;
 
 typedef struct {int x; int y;} coordonne;

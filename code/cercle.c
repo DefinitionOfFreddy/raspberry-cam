@@ -7,11 +7,12 @@ coordonne coord_centre(img I, int nb_ligne, int nb_colone, pixel* p, int c)
     int ligne_seg = 0;
     int deb_seg = -1;
     int fin_seg = 0;
-    for (int i=0; i<nb_ligne;i++)
+    int i,j;
+    for (i=0; i<nb_ligne;i++)
     {
         int cur_deb_seg =-1;
         int cur_fin_seg = -1;
-        for (int j=0; j< nb_colone; j++)
+        for (j=0; j< nb_colone; j++)
         {
             if (I[i][j].couleur == c){
                 if(cur_deb_seg == -1){
