@@ -4,6 +4,7 @@
 #include "type.h"
 #include "imp_exp.h"
 
+/*
 void main (int argc, char* argv[])
 {
 	int export,nlig,ncol;
@@ -23,4 +24,4 @@ void main (int argc, char* argv[])
 	printf("Exportation ok\n");
 	desallocation_1(I,nlig);
 
-}
+}*/
