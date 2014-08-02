@@ -15,9 +15,15 @@ typedef struct {
   int G;
   int B;
   int etat;
-}** imgRGB;
+} pixel_RGB;
+
+typedef pixel_RGB** img_RGB;
 
 void afficheimg_1(img I, int lig, int col);
+void afficheimg_RGB(img_RGB I, int lig, int col);
+
+int proche_RGB(pixel_RGB* p1, pixel_RGB* p2, double eps); //Condition: | |p1|-|p2| |<eps
+//Renvoie 1 si | |p1| - |p2| |<eps , 0 sinon
 
 
 

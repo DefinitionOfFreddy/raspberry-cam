@@ -4,7 +4,7 @@
 #include "type.h"
 #include "imp_exp.h"
 #include "cercle.h"
-
+/*
 int main (int argc, char* argv[])
 {
     int export,nlig,ncol;
@@ -35,4 +35,5 @@ int main (int argc, char* argv[])
     desallocation_1(I,nlig);
     desallocation_1(J,nlig2);
     return 0;
-}
+}*/
+

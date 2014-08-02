@@ -87,10 +87,10 @@ int export_1(img I, char* f, int ext, int lig , int col)
 	return 1;
 }
 
-imgRGB import_RGB(char* f, int* plig, int* pcol)
+img_RGB import_RGB(char* f, int* plig, int* pcol)
 {
 	int i,j;
-	imgRGB Irgb;
+	img_RGB Irgb;
 	FILE *fichier;
 	fichier = fopen(f,"r");
 	if (fichier==NULL) printf("Erreur ouverture image\n");
@@ -107,7 +107,7 @@ imgRGB import_RGB(char* f, int* plig, int* pcol)
 		fgets(stri,3,fichier);
 		// lecture = fscanf(fichier,"%s", stri);
 		lecture = fscanf(fichier,"%d %d",&lig,&col);
-
+		lecture = fscanf(fichier, "%d", &i);
 		printf("lignes: %d colonnes: %d\n",lig,col);
 
 		Irgb = calloc(lig,sizeof(*Irgb));
@@ -118,6 +118,7 @@ imgRGB import_RGB(char* f, int* plig, int* pcol)
 			{
 				Irgb[i] = calloc(col,sizeof(**Irgb));
 			}
+
 			for(i=0;i<lig;i++)
 			{
 				for(j=0;j<col;j++)
@@ -139,7 +140,7 @@ imgRGB import_RGB(char* f, int* plig, int* pcol)
 	return Irgb;
 }
 
-int export_RGB(imgRGB Irgb, char* f, int lig , int col) //Matrice -> .ppm
+int export_RGB(img_RGB Irgb, char* f, int lig , int col) //Matrice -> .ppm
 {
 	int i,j,ecriture;
 	FILE* fichier;
@@ -147,18 +148,28 @@ int export_RGB(imgRGB Irgb, char* f, int lig , int col) //Matrice -> .ppm
 	if (  fichier == NULL  ) return 0;
 	else
 	{
-		fprintf(fichier,"P5\n");
+		fprintf(fichier,"P3\n");
 
 	fprintf(fichier,"%d %d\n",lig, col);
-
+	fprintf(fichier, "%d\n", 255);
 	for(i=0;i<lig;i++)
 	{
 		for(j=0;j<col;j++)
 		{
 			fprintf(fichier,"%d %d %d ",Irgb[i][j].R, Irgb[i][j].G, Irgb[i][j].B );
 		}
-		printf("\n");
+		fprintf(fichier,"\n");
 	}
 	}
 	return 1;
+}
+
+void desallocation_RGB(img_RGB Irgb, int lig)
+{
+	int i;
+	for(i=0;i<lig;i++)
+	{
+		free(Irgb[i]);
+	}
+	free(Irgb);
 }
