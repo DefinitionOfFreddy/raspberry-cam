@@ -10,6 +10,8 @@ CFLAGS=-g -std=c99 -I. -Wall -Wextra
 
 main: main.c
 	gcc -o $@ $^
+detection: detection.o imp_exp.o type.o
+	gcc -o $@ $^
 
 testcercle: testcercle.o imp_exp.o type.o
 	gcc -o $@ $^
