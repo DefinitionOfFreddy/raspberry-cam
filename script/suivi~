@@ -1,7 +1,0 @@
-cd ../code && make detection && cd ../script
-for ((i=0;i<20;i++))
-	do ../code/testcercle ../banque/images/img_$i.ppm ../banque/images/suivi_$i.ppm
-	montage -geometry 400x200 -tile 2x1 ../banque/images/img_$i.ppm ../banque/images/suivi_$i.ppm ../banque/images/stick_$i.ppm
-	rm ../banque/images/suivi*
-done
-
