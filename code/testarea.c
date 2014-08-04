@@ -5,7 +5,7 @@
 #include "imp_exp.h"
 #include "cercle.h"
 #include "area.h"
-/*
+
 //Argument : fichier, couleur, seuil
 int main(int argc, char* argv[])
 {	int nlig,ncol;
@@ -34,6 +34,10 @@ int main(int argc, char* argv[])
 		return 0;
 	}
 
-	printf("%d\n", darea);
+	printf("Début Aera :%d\n", darea);
+	int farea = fin_area_1(I, nlig, ncol, c, seuil, darea);
+
+	printf("Fin Aera :%d\n", farea);
+
 	return 0;
-}*/
+}
