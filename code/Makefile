@@ -19,7 +19,7 @@ testcercle: testcercle.o imp_exp.o type.o
 testcercle2: testcercle2.o imp_exp.o type.o cercle.o
 	gcc -o $@ $^
 
-testarea: testarea.o imp_exp.o area.o type.o
+testarea: testarea.o imp_exp.o area.o area2.o type.o
 	gcc -o $@ $^
 
 %.o: %.c
