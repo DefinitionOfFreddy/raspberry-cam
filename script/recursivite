@@ -1,0 +1,7 @@
+cd ../code && make detection && cd ../script;
+for ((i=0;i<20;i++))
+	do ../code/detection ../banque/images/img_$i.ppm ../banque/images/recurs_$i.ppm
+	montage -geometry 400x200 -tile 2x1 ../banque/images/img_$i.ppm ../banque/images/recurs_$i.ppm ../banque/images/res_recurs/stick_recurs_$i.ppm
+	rm ../banque/images/recurs*
+done
+echo "Resultat dans /banque/images/res_recurs/"
